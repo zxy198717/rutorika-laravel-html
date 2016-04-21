@@ -195,9 +195,11 @@ $('.rk-select2').each(function () {
   }
 
   function initSelect2($select) {
-    $select.select2({
-      theme: 'bootstrap'
-    });
+    if ($select.data('options')) {
+      $select.select2($select.data('options'));
+    } else {
+      $select.select2();
+    }
   }
 });
 
